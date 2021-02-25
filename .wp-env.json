@@ -1,0 +1,9 @@
+{
+	"core": "WordPress/WordPress#master",
+	"mappings": {
+		"wp-content/mu-plugins": "./wp-content/mu-plugins",
+		"wp-content/plugins": "./wp-content/plugins",
+		"wp-content/themes": "./wp-content/themes"
+	},
+	"config": {}
+}
