@@ -7,7 +7,7 @@
 /**
  * Initial setup of the site, enable the plugins as wp-env doesn't do it.
  */
-add_action( 'init', function() {
+add_action( 'admin_init', function() {
 	global $wpdb;
 	if ( get_site_option( 'initial_setup' ) < 1 ) {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
