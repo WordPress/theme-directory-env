@@ -7,6 +7,7 @@
 		"wp-content/themes": "./wp-content/themes"
 	},
 	"config": {
-		"WP_DEFAULT_THEME": "wporg-themes"
+		"WP_DEFAULT_THEME": "wporg-themes",
+		"WP_ENVIRONMENT_TYPE": "local"
 	}
 }
