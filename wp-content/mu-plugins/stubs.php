@@ -22,6 +22,21 @@ add_action( 'admin_init', function() {
 
 		// Initial pages are created by wporg_themes_activate().
 
+		// Add example commercial shops.
+		if ( ! get_posts( [ 'post_type' => 'theme_shop', 'post_status' => 'any' ] ) ) {
+			foreach ( [ 'example.com', 'example.net', 'example.org' ] as $shop ) {
+				wp_insert_post( [
+					'post_type' => 'theme_shop',
+					'post_status' => 'publish',
+					'post_title' => $shop,
+					'post_content' => "$shop $shop $shop\nExample Example Example\n$shop $shop $shop",
+					'meta_input' => [
+						'url' => "https://$shop/",
+					],
+				] );
+			}
+		}
+
 		update_site_option( 'initial_setup', 1 );
 	}
 
