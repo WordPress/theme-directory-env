@@ -1,21 +1,23 @@
 {
   "name": "theme-directory-environment",
   "version": "1.0.0",
-  "description": "Theme Directory local development environment",
+  "description": "Local development tools for wordpress.org/themes/",
+  "author": "WordPress.org",
+  "license": "GPL-2.0-or-later",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@wordpress/env": "^3.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "provision": "./provision.sh",
+    "start": "npm run provision && npm run wp-env start",
     "wp-env": "wp-env"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/wordpress/theme-directory-env"
   },
-  "author": "WordPress.org",
-  "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/wordpress/theme-directory-env/issues"
   },

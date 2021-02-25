@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This ideally wouldn't be required, but we need some SVN checkouts of certain paths, and creation of some global things.
+# This ideally wouldn't be required, but we need some SVN checkouts of certain paths, and to install some plugins.
 
 # Maybe checkout the plugin/themes
 [[ -d wp-content/mu-plugins/pub ]] || svn co -q --non-interactive https://meta.svn.wordpress.org/sites/trunk/wordpress.org/public_html/wp-content/mu-plugins/pub/ wp-content/mu-plugins/pub
