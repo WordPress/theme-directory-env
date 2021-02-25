@@ -1,9 +1,12 @@
 {
 	"core": "WordPress/WordPress#master",
 	"mappings": {
+		".htaccess": "./.wp-env/.htaccess",
 		"wp-content/mu-plugins": "./wp-content/mu-plugins",
 		"wp-content/plugins": "./wp-content/plugins",
 		"wp-content/themes": "./wp-content/themes"
 	},
-	"config": {}
+	"config": {
+		"WP_DEFAULT_THEME": "wporg-themes"
+	}
 }

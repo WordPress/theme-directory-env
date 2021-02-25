@@ -1,3 +1,4 @@
 node_modules
+wp-content/mu-plugins/pub
 wp-content/plugins/*
 wp-content/themes/*
