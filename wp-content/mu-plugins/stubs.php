@@ -20,6 +20,8 @@ add_action( 'init', function() {
 
 		update_option( 'posts_per_page', 12 );
 
+		// Initial pages are created by wporg_themes_activate().
+
 		update_site_option( 'initial_setup', 1 );
 	}
 
