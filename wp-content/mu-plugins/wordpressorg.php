@@ -4,13 +4,6 @@
  */
 
 /**
- * Include the WordPress.org pub mu-plugins.
- */
-foreach ( glob( __DIR__  . '/pub/*.php' ) as $_pub_file ) {
-	include_once $_pub_file;
-}
-
-/**
  * Avoid database errors by skipping certain tables that are not needed.
  */
 add_filter( 'query', function( $query ) {
