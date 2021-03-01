@@ -9,7 +9,7 @@
  */
 add_action( 'admin_init', function() {
 	global $wpdb;
-	if ( get_site_option( 'initial_setup' ) < 2 ) {
+	if ( get_site_option( 'initial_setup' ) < 3 ) {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 		activate_plugins( [
@@ -37,6 +37,20 @@ add_action( 'admin_init', function() {
 			}
 		}
 
+		// Add the theme directory categories.
+		if ( ! category_exists( 'special-case-theme' ) ) {
+			wp_insert_term( 'Special Case Theme', 'category', [
+				'slug'        => 'special-case-theme',
+				'description' => 'Special Case Themes are allowed to bypass theme-check'
+			] );
+		}
+		if ( ! category_exists( 'featured' ) ) {
+			wp_insert_term( 'Featured', 'category', [
+				'slug'        => 'featured',
+				'description' => 'Featured "curated" themes. No Upsells or Lite Versions – only 100% Free like WordPress itself.'
+			] );
+		}
+
 		// Import the default themes.
 		$default_themes = [
 			'default',
@@ -57,7 +71,7 @@ add_action( 'admin_init', function() {
 			import_theme_from_wporg( $theme );
 		}
 
-		update_site_option( 'initial_setup', 2 );
+		update_site_option( 'initial_setup', 3 );
 	}
 
 } );
