@@ -120,11 +120,16 @@ function import_theme_from_wporg( $theme_slug ) {
 		'_upload_date'  => $theme->last_updated,
 		'_ticket_id'    => 0,
 		'_screenshot'   => basename( parse_url ( $theme->screenshot_url, PHP_URL_PATH ) ),
+		// TODO: These fields aren't exposed by the API.
+		'_tested'       => '',
+		'_contributors' => '',
+		'_license'      => '',
+		'_license_uri'  => '',
 	];
 	$post_meta = [
 		'_active_installs' => $theme->active_installs,
 		'_downloads'       => $theme->downloaded,
-		'_popularity'      => 1 / rand( 1, 1000 ), // :)
+		'_popularity'      => 1 / rand( 1, 1000 ), // TODO: actually calculate this field.
 
 		// for data shimming below.
 		'downloads'        => (int) $theme->downloaded,
