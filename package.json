@@ -10,8 +10,6 @@
     "@wordpress/env": "^3.0.2"
   },
   "scripts": {
-    "provision": "./provision.sh",
-    "start": "npm run provision && npm run wp-env start",
     "wp-env": "wp-env"
   },
   "repository": {
