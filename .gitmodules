@@ -1,7 +1,3 @@
-[submodule "wp-content/plugins/theme-check"]
-	path = wp-content/plugins/theme-check
-	url = https://github.com/wordpress/theme-check
-	branch = master
 [submodule "meta.git"]
 	path = meta.git
 	url = https://github.com/wordpress/wordpress.org
