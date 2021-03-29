@@ -13,7 +13,6 @@ add_action( 'admin_init', function() {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 		activate_plugins( [
-			'jetpack/jetpack.php',
 			'theme-check/theme-check.php',
 			'theme-directory/theme-directory.php'
 		] );
