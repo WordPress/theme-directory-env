@@ -7,10 +7,15 @@
 /**
  * Initial setup of the site, enable the plugins as wp-env doesn't do it.
  */
-add_action( 'admin_init', function() {
-	global $wpdb;
+add_action( 'template_redirect', function() {
 	if ( get_site_option( 'initial_setup' ) < 3 ) {
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+		echo '<h1 id="provision-message">Provisioning Theme Directory, please wait a few moments...</h1>';
+		ignore_user_abort( true );
+		wp_ob_end_flush_all();
+		flush();
+
+		include_once ABSPATH . 'wp-admin/includes/admin.php';
 
 		activate_plugins( [
 			'theme-check/theme-check.php',
@@ -71,6 +76,9 @@ add_action( 'admin_init', function() {
 		}
 
 		update_site_option( 'initial_setup', 3 );
+
+		// Hide the provisioning message.
+		echo '<style>#provision-message { display: none }</style>';
 	}
 
 } );
