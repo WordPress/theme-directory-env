@@ -112,6 +112,7 @@ function import_theme_from_wporg( $theme_slug ) {
 		'post_name'         => $theme_slug,
 		'post_content'      => $theme->sections->description,
 		'post_parent'       => 0,
+		'post_author'       => 1,
 		'post_date'         => $theme->creation_time,
 		'post_date_gmt'     => $theme->creation_time,
 		'post_modified'     => $theme->last_updated_time,
