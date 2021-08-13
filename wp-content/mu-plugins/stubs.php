@@ -41,6 +41,20 @@ add_action( 'template_redirect', function() {
 			}
 		}
 
+		// Create a default 'wordpressdotorg' user, which is special for the Theme Directory.
+		if ( ! get_user_by( 'login', 'wordpressdotorg' ) ) {
+			wp_insert_user( [
+				'user_login' => 'wordpressdotorg',
+				'user_pass'  => 'wordpressdotorg',
+				'user_email' => 'wapuu@wordpress.example',
+				'role'       => 'administrator',
+			] );
+		}
+
+		// Switch to the WordPressdotorg user, as it's needed for adding terms.
+		$current_user = get_current_user_id();
+		wp_set_current_user( get_user_by( 'login', 'wordpressdotorg' )->ID );
+
 		// Add the theme directory categories.
 		if ( ! category_exists( 'special-case-theme' ) ) {
 			wp_insert_term( 'Special Case Theme', 'category', [
@@ -54,6 +68,19 @@ add_action( 'template_redirect', function() {
 				'description' => 'Featured "curated" themes. No Upsells or Lite Versions – only 100% Free like WordPress itself.'
 			] );
 		}
+
+		// Create all tags for the directory.
+		$tags = themes_api( 'hot_tags' );
+		foreach ( (array) $tags as $tag ) {
+			if ( ! tag_exists( $tag['slug'] ) ) {
+				wp_insert_term( $tag['name'], 'post_tag', [
+					'slug' => $tag['slug'],
+				] );
+			}
+		}
+
+		// Reset the current user.
+		wp_set_current_user( $current_user );
 
 		// Import the default themes.
 		$default_themes = [
