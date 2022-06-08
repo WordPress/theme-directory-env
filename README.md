@@ -7,15 +7,16 @@
 
 ## Setup
 1. `git clone https://github.com/wordpress/theme-directory-env`
-2. `npm install`
-3. `npm run start` (This will provision some git checkouts as needed)
-4. Visit site at `localhost:8888`
+2. `cd theme-directory-env`
+3. `npm install`
+4. `npm run start` (This will provision some git checkouts as needed)
+5. Visit site at <a href="http://localhost:8888" target="_blank">http://localhost:8888</a>
 
 ## Stopping Environment
-run `wp-env stop`
+`npm run wp-env stop`
 
 ## Removing Environment
-run `wp-env destroy`
+`npm run wp-env destroy`
 
 ## Development
 
