@@ -3,6 +3,7 @@
 	"mappings": {
 		".htaccess": "./.wp-env/.htaccess",
 		"wp-content": "./wp-content",
+		"wp-content/mu-plugins/pub": "./wporg-mu-plugins.git/mu-plugins",
 		"wp-content/plugins/theme-directory": "./meta.git/wordpress.org/public_html/wp-content/plugins/theme-directory",
 		"wp-content/themes/wporg": "./meta.git/wordpress.org/public_html/wp-content/themes/pub/wporg",
 		"wp-content/themes/wporg-themes": "./meta.git/wordpress.org/public_html/wp-content/themes/pub/wporg-themes"
