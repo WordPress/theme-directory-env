@@ -7,11 +7,11 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "@wordpress/env": "^4.0.0"
+    "@wordpress/env": "^4.8.0"
   },
   "scripts": {
     "provision": "./provision.sh",
-    "start": "npm run provision && npm run wp-env start",
+    "start": "npm run provision && npm run wp-env start && npm run wp-env run cli wp rewrite structure %postname%",
     "wp-env": "wp-env"
   },
   "repository": {
