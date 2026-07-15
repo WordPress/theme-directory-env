@@ -4,7 +4,7 @@
 > **This repository is deprecated and archived.**
 >
 > The Theme Directory local development environment now lives in the
-> WordPress.org monorepo at [`environments/theme-directory/`](https://github.com/WordPress/wordpress.org/tree/trunk/environments/theme-directory).
+> WordPress.org Meta repo at [`environments/theme-directory/`](https://github.com/WordPress/wordpress.org/tree/trunk/environments/theme-directory).
 >
 > Use that instead. The instructions below are retained for historical reference only.
 
